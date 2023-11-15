@@ -1,24 +1,26 @@
 #include "main.h"
 
 /**
- * free_line_list - line listing free
+ * free_line_list - listing free
  * @head: header file
  */
-void free_line_list(cline_listt **head) {
-    cline_listt *temp;
-    cline_listt *curr;
+void free_line_list(cline_listt **head)
+{
+	cline_listt *temp;
+	cline_listt *curr;
 
-    if (*head != NULL) {
-        curr = *head;
+	if (*head != NULL)
+	{
+		curr = *head;
 
-        while (curr != NULL) {
-            temp = curr;
-            curr = curr->next;
-            free(temp);
-        }
+	while (curr != NULL) {
+	temp = curr;
+	curr = curr->next;
+	free(temp);
+	}
 
-        *head = NULL;
-    }
+	*head = NULL;
+	}
 }
 /*void free_line_list(cline_listt *head)
 	{
