@@ -4,7 +4,23 @@
  * free_line_list - line listing free
  * @head: header file
  */
-void free_line_list(cline_listt **head)
+void free_line_list(cline_listt **head) {
+    cline_listt *temp;
+    cline_listt *curr;
+
+    if (*head != NULL) {
+        curr = *head;
+
+        while (curr != NULL) {
+            temp = curr;
+            curr = curr->next;
+            free(temp);
+        }
+
+        *head = NULL;
+    }
+}
+/*void free_line_list(cline_listt *head)
 	{
 	cline_listt *temp;
 	cline_listt *curr;
@@ -21,7 +37,7 @@ void free_line_list(cline_listt **head)
 		} while (temp != NULL);
 		*head = NULL;
 	}
-}
+}*/
 
 /**
  * free_sep_list - sep_list
