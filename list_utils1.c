@@ -4,8 +4,8 @@
  * free_line_list - line listing free
  * @head: header file
  */
-void free_line_list(cline_listt **head)
-{
+void free_line_list(cline_listt *head)
+	{
 	cline_listt *temp;
 	cline_listt *curr;
 
@@ -14,8 +14,7 @@ void free_line_list(cline_listt **head)
 		cline_listt *curr = *head;
 		cline_listt *temp;
 
-		do
-		{
+		do {
 			temp = curr;
 			curr = curr->next;
 			free(temp);
@@ -34,8 +33,8 @@ void free_sep_list(sep_listt **head)
 	{
 		sep_listt *curr = *head;
 		sep_listt *temp;
-		do
-		{
+
+		do {
 			temp = curr;
 			curr = curr->next;
 			free(temp);
@@ -53,20 +52,19 @@ void free_sep_list(sep_listt **head)
  */
 void next_node(sep_listt **sep_l, cline_listt **line_l, shell_dt *data)
 {
-    int loop_sep;
-    sep_listt *ls_s;
-    cline_listt *ls_l;
+	int loop_sep;
+	sep_listt *ls_s;
+	cline_listt *ls_l;
 
-    do
-    {
-        loop_sep = 1;
-        ls_s = *sep_l;
-        ls_l = *line_l;
+	do {
+		loop_sep = 1;
+		ls_s = *sep_l;
+		ls_l = *line_l;
 
-        if (ls_s != NULL && loop_sep)
-        {
-            if (data->stat == 0)
-            {
+	if (ls_s != NULL && loop_sep)
+	{
+	if (data->stat == 0)
+	{
                 if (ls_s->sep == '&' || ls_s->sep == ';')
                     loop_sep = 0;
                 if (ls_s->sep == '|')
