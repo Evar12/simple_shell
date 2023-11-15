@@ -13,7 +13,8 @@ void free_line_list(cline_listt **head)
 	{
 		curr = *head;
 
-	while (curr != NULL) {
+	while (curr != NULL)
+	{
 	temp = curr;
 	curr = curr->next;
 	free(temp);
@@ -22,7 +23,8 @@ void free_line_list(cline_listt **head)
 	*head = NULL;
 	}
 }
-/*void free_line_list(cline_listt *head)
+/*
+ * void free_line_list(cline_listt *head)
 	{
 	cline_listt *temp;
 	cline_listt *curr;
@@ -34,15 +36,16 @@ void free_line_list(cline_listt **head)
 
 		do {
 			temp = curr;
-			curr = curr->next;
+			]curr = curr->next;
 			free(temp);
 		} while (temp != NULL);
 		*head = NULL;
 	}
-}*/
+}
+*/
 
 /**
- * free_sep_list - sep_list
+ * free_sep_list - sep
  * @head: header
  */
 void free_sep_list(sep_listt **head)
@@ -83,24 +86,24 @@ void next_node(sep_listt **sep_l, cline_listt **line_l, shell_dt *data)
 	{
 	if (data->stat == 0)
 	{
-                if (ls_s->sep == '&' || ls_s->sep == ';')
-                    loop_sep = 0;
-                if (ls_s->sep == '|')
-                    ls_l = ls_l->next, ls_s = ls_s->next;
-            }
-            else
-            {
-                if (ls_s->sep == '|' || ls_s->sep == ';')
-                    loop_sep = 0;
-                if (ls_s->sep == '&')
-                    ls_l = ls_l->next, ls_s = ls_s->next;
-            }
-        }
+		if (ls_s->sep == '&' || ls_s->sep == ';')
+			loop_sep = 0;
+			if (ls_s->sep == '|')
+			ls_l = ls_l->next, ls_s = ls_s->next;
+	}
+	else
+	{
+		if (ls_s->sep == '|' || ls_s->sep == ';')
+		loop_sep = 0;
+		if (ls_s->sep == '&')
+		ls_l = ls_l->next, ls_s = ls_s->next;
+	}
+	}
 
-        if (ls_s != NULL && !loop_sep)
-            ls_s = ls_s->next;
-    } while (ls_s != NULL && loop_sep);
+	if (ls_s != NULL && !loop_sep)
+	ls_s = ls_s->next;
+} while (ls_s != NULL && loop_sep);
 
-    *sep_l = ls_s;
-    *line_l = ls_l;
+	*sep_l = ls_s;
+	*line_l = ls_l;
 }
