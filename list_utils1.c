@@ -4,7 +4,7 @@
  * free_line_list - line listing free
  * @head: header file
  */
-void free_line_list(cline_listt *head)
+void free_line_list(cline_listt **head)
 	{
 	cline_listt *temp;
 	cline_listt *curr;
