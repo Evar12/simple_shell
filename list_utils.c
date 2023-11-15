@@ -6,7 +6,7 @@
  * @head: parameter name head passed
  * @var_len: len var
  * @val: value used
- * @val_le: valle
+ * @val_len: vallen used
  *
  * Return: returned
  */
