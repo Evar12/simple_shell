@@ -41,7 +41,7 @@ void data_init(shell_dt *data, char **av)
 	while (environ[a])
 		a++;
 
-	data->_env = malloc(sizeof(char *) * (*a + 1));
+	data->_env = malloc(sizeof(char *) * (a + 1));
 
 	for (a = 0; environ[a]; a++)
 	{

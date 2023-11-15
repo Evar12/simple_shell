@@ -33,7 +33,7 @@ void sheller(shell_dt *data)
 				continue;
 			}
 			input = vars_sub(input, data);
-			cond = run_cmds(data, input);
+			condition = run_cmds(data, input);
 			data->count += 1;
 			free(input);
 		}
