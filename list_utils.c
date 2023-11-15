@@ -11,7 +11,7 @@
  * Return: returned
  */
 var_listt *add_var_list_node(var_listt **head,
-		int len, char *val, int val_len)
+		int var_len, char *val, int val_len)
 {
 	var_listt *new, *tmp;
 
@@ -19,7 +19,7 @@ var_listt *add_var_list_node(var_listt **head,
 	if (new == NULL)
 		return (NULL);
 
-	new->len = len;
+	new->var_len = var_len;
 	new->val = val;
 	new->val_len = val_len;
 
